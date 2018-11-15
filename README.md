@@ -1,9 +1,16 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-**NOTE: This is a toy package created for expository purposes. It is not meant to actually be useful. If you want a package for factor handling, please see [forcats](https://cran.r-project.org/package=forcats).**
+hw07-aleurcelay
+===============
+
+**NOTE: This is a toy package created for expository purposes. It is not
+meant to actually be useful. If you want a package for factor handling,
+please see [forcats](https://cran.r-project.org/package=forcats).**
 
 ### foofactors
 
-Factors are a very useful type of variable in R, but they can also drive you nuts. This package provides some helper functions for the care and feeding of factors.
+Factors are a very useful type of variable in R, but they can also drive
+you nuts. This package provides some helper functions for the care and
+feeding of factors.
 
 ### Installation
 
@@ -21,7 +28,7 @@ a <- factor(c("character", "hits", "your", "eyeballs"))
 b <- factor(c("but", "integer", "where it", "counts"))
 ```
 
-Simply catenating two factors leads to a result that most don't expect.
+Simply catenating two factors leads to a result that most don’t expect.
 
 ``` r
 c(a, b)
@@ -37,7 +44,10 @@ fbind(a, b)
 #> Levels: but character counts eyeballs hits integer where it your
 ```
 
-Often we want a table of frequencies for the levels of a factor. The base `table()` function returns an object of class `table`, which can be inconvenient for downstream work. Processing with `as.data.frame()` can be helpful but it's a bit clunky.
+Often we want a table of frequencies for the levels of a factor. The
+base `table()` function returns an object of class `table`, which can be
+inconvenient for downstream work. Processing with `as.data.frame()` can
+be helpful but it’s a bit clunky.
 
 ``` r
 set.seed(1234)
@@ -55,16 +65,17 @@ as.data.frame(table(x))
 #> 5 e   15
 ```
 
-The `freq_out()` function returns a frequency table as a well-named `tbl_df`:
+The `freq_out()` function returns a frequency table as a well-named
+`tbl_df`:
 
 ``` r
 freq_out(x)
-#> # A tibble: 5 × 2
-#>        x     n
-#>   <fctr> <int>
-#> 1      a    25
-#> 2      b    26
-#> 3      c    17
-#> 4      d    17
-#> 5      e    15
+#> # A tibble: 5 x 2
+#>   x         n
+#>   <fct> <int>
+#> 1 a        25
+#> 2 b        26
+#> 3 c        17
+#> 4 d        17
+#> 5 e        15
 ```
