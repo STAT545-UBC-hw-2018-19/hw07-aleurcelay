@@ -1,6 +1,6 @@
 ---
 title: "stringsAsFactors = HELLNO"
-author: "Jenny Bryan"
+author: "Alejandra Urcelay"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -13,6 +13,8 @@ Factors are a very useful type of variable in R, but they can also drive you nut
 
 Can we soften some of their sharp edges?
 
+---
+## `fbind()`
 Binding two factors via `fbind()`:
 
 ```{r}
@@ -41,10 +43,129 @@ x <- factor(sample(letters[1:5], size = 100, replace = TRUE))
 table(x)
 as.data.frame(table(x))
 ```
+---
+
+## `freq_out()`
 
 The `freq_out()` function returns a frequency table as a well-named `tbl_df`:
 
 ```{r}
 freq_out(x)
 ```
+
+--- 
+
+## `first_upper()`
+
+The `first_upper()` function returns the same factor but with the first letter of each character value capitalized.
+
+```{r}
+months <- factor(c("january","february","march","april","may","june","july",
+         "august","september","october","november","december"))
+first_upper(months)
+```
+---
+
+## `subfactor()`
+
+```{r}
+library(ggplot2)
+library(scales)
+library(gapminder)
+Euro <- gapminder %>%
+  filter(year == 2007, continent == "Europe" ) %>% 
+  head(20)
+
+Euro %>%
+  ggplot(aes(x = country, y = lifeExp)) +
+  geom_point() +
+  guides(fill=F) +
+  labs(x = "Country", y = "Life Expectancy") +
+  theme_bw()
+
+```
+
+And now lets see after applying the `subfactor()` function
+```{r}
+Euro %>%
+  ggplot(aes(x = subfactor(country), y = lifeExp)) +
+  geom_point() +
+  labs(x = "Country", y = "Life Expectancy") +
+  theme_bw()
+
+```
+
+
+--- 
+
+## `factor_asis()`
+
+The `factor_asis()` function encodes a vector as a factor with levels in the same order as they appear in the data instead of the alphabetical order.
+
+```{r}
+continents <- factor(c("Asia", "Europe", "Africa", "Americas", "Oceania"))
+levels(continents)
+
+continents_asis <- factor_asis(c("Asia", "Europe", "Africa", "Americas", "Oceania"))
+levels(continents_asis)
+```
+
+This function has the same effect when plotting. To demonstrate this, let's look at a plot of the number of countries in each continent from the `gapminder` dataset without modification.
+
+```{r}
+gapminder %>%
+  filter(year == 2007) %>%
+  ggplot(aes(x = continent, fill = continent)) +
+  scale_fill_brewer(palette = "Pastel2") +
+  geom_bar() +
+  guides(fill=F) +
+  labs(x = "Continent", y = "Number of countries") +
+  theme_bw()
+
+```
+
+And now the same plot using `factor_asis()`.
+
+```{r}
+gapminder %>%
+  filter(year == 2007) %>%
+  ggplot(aes(x = factor_asis(continent), fill = continent)) +
+  scale_fill_brewer(palette = "Pastel2") +
+  geom_bar() +
+  guides(fill=F) +
+  labs(x = "Continent", y = "Number of countries") +
+  theme_bw()
+```
+As noted, the order of the continents corresponds to the order of appearance in the dataset. 
+
+---
+
+## `reorder_desc()`
+
+The `reorder_desc()` function reorders the levels of a factor in a descending order. 
+
+```{r}
+alpha_continents <- factor(c("Africa", "Americas", "Asia", "Europe", "Oceania"))
+alpha_continents
+
+reorder_desc(alpha_continents)
+```
+
+This function mantains levels in a descending order even when plotting:
+
+```{r}
+gapminder %>%
+  filter(year == 2007) %>%
+  ggplot(aes(x = reorder_desc(continent), fill = continent)) +
+  scale_fill_brewer(palette = "Pastel2") +
+  geom_bar() +
+  guides(fill=F) +
+  labs(x = "Continent", y = "Number of countries") +
+  theme_bw()
+```
+```
+
+
+
+
 

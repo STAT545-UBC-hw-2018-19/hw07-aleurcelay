@@ -12,7 +12,7 @@
 #' backward(iris$Species)
 backward <- function(x) {
   back_order <- seq(length(x), 1)
-  reorder(x, back_order)
-  
+  z <- reorder(x, back_order)
+  return(z)
 }
 

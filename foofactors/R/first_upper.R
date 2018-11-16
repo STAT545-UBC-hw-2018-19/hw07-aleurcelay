@@ -1,6 +1,6 @@
 #' First letter uppercase
 #'
-#' Returns the same factor but with the first letter changred to uppercase
+#' Returns the same factor but with the first letter of each character value capitalized. 
 #'
 #' @param x factor
 #' 
