@@ -1,0 +1,45 @@
+---
+title: "Untitled"
+author: "Alejandra"
+date: "12/11/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#libraries
+```{r}
+library(gapminder)
+library(tidyverse)
+library(dplyr)
+```
+
+#create example dataframe
+```{r}
+df <- data_frame(c(1,2,3,4,5), c(1,3,4,2,5))
+colnames(df) <- c('x', 'y')
+
+ggplot(df, aes(x, y))+
+  geom_point(col = 'red')
+
+```
+
+
+```{r}
+#lets first get the levels of the reorder
+reorder_levels <- reorder(df$x, -df$y)
+reorder_levels
+df_reorder2 <- data_frame(reorder_levels, df$y)
+
+#and now use those levels to order the dataframe
+df_reorder <- df[order(factor(df$y, levels = reorder_levels)),]
+
+ggplot(df_reorder, aes(reorder(x, -y) ,y))+
+  geom_point(col='blue')
+
+
+
+```
+

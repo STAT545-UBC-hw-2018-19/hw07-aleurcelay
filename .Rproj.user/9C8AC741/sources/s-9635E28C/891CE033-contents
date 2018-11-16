@@ -1,0 +1,14 @@
+#' Reorder factor in descending order
+#' This functions reorder the factor levels in descending order
+#' @param x factor
+#' 
+#'
+#' @return factor
+#' @export
+#' @examples
+#' reorder_desc(iris$Species)
+reorder_desc <- function(x) {
+  reorder(x, dplyr::desc(x))
+  
+}
+

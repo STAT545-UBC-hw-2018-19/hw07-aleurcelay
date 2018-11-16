@@ -1,0 +1,23 @@
+Package: foofactors
+Title: Make Factors Less Annoying
+Version: 0.0.0.9001
+Authors@R: person("Jennifer", "Bryan", "Alejandra" role=c("aut", "cre", "cre"),
+    email = "jenny@stat.ubc.ca")
+Description: This is a copy of the foofactors package initially developed by Jenny Brian.
+    This package was only updated for education purposes. The original description is below: 
+    Factors have driven people to extreme measures, like ordering
+    custom conference ribbons and laptop stickers to express how HELLNO we
+    feel about stringsAsFactors. And yet, sometimes you need them. Can they
+    be made less maddening? Let's find out.
+Depends:
+    R (>= 3.2.2)
+License: MIT + file LICENSE
+LazyData: true
+RoxygenNote: 5.0.1.9000
+Suggests: testthat,
+    knitr,
+    rmarkdown
+Imports: dplyr
+VignetteBuilder: knitr
+URL: STAT545-UBC-students/hw07-aleurcelay
+BugReports: STAT545-UBC-students/hw07-aleurcelay
