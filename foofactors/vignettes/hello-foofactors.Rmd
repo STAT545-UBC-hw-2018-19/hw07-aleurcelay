@@ -67,6 +67,8 @@ first_upper(months)
 
 ## `subfactor()`
 
+The `subfactor()` This function returns a factor with just the first three letters of each element.
+
 ```{r, warning = FALSE, message = FALSE, fig.width = 6, fig.height = 4}
 library(tidyverse)
 library(scales)
