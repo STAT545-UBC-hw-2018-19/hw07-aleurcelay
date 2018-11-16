@@ -10,5 +10,6 @@ For this assignment I modified the foofactors package developed by Jenny Brian.
 The original package can be found [here](https://github.com/jennybc/foofactors) 
 
 For the README file of my modified version of foofactors please click in the following link
+
 :star2: [foofactors](/foofactors/README.md)
 
