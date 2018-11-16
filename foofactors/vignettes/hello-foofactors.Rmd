@@ -79,9 +79,9 @@ Euro <- gapminder %>%
 
 Euro %>%
   ggplot(aes(x = country, y = lifeExp)) +
-  geom_point() +
+  geom_point(shape = 23, fill = 'cornflowerblue', size = 3) +
   guides(fill=F) +
-  labs(x = "Country", y = "Life Expectancy") +
+  labs(x = "Country", y = "Life Expectancy (years)") +
   theme_bw()
 
 ```
@@ -90,8 +90,8 @@ And now lets see after applying the `subfactor()` function
 ```{r, fig.width=6, fig.height=4}
 Euro %>%
   ggplot(aes(x = subfactor(country), y = lifeExp)) +
-  geom_point() +
-  labs(x = "Country", y = "Life Expectancy") +
+  geom_point(shape = 23, fill = 'cornflowerblue', size = 3) +
+  labs(x = "Country", y = "Life Expectancy (years)") +
   theme_bw()
 
 ```
