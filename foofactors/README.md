@@ -22,10 +22,26 @@ feeding of factors.
 devtools::install_github("STAT545-UBC-students/hw07-aleurcelay/foofactors")
 ```
 
+\#\#Summary This package contains the following functions.
+
+-   `fbind()`: Glues two factors together and returns factor.
+-   `freq_out()`: Returns a frequency table as a well-named `tbl_df`
+-   `first_upper()`: Returns the same factor but with the first letter
+    of each character value capitalized.
+-   `subfactor()`: Returns a factor with just the first three letters of
+    each element.
+-   `factor_asis()`: Encodes a vector as a factor with levels in the
+    same order as they appear in the data
+-   `reorder_desc()`: Reorders the levels of a factor in a descending
+    order.
+
 Below is quick demo, for some more examples working with graphs take a
-look at the [vignettes](/vignettes/hello-foofactors.html)
+look at the [vignettes](http://rpubs.com/aleurcelay/440302)
 
 ### Quick demo
+
+`fbind()`
+---------
 
 Binding two factors via `fbind()`:
 
@@ -72,6 +88,9 @@ as.data.frame(table(x))
 #> 5 e   15
 ```
 
+`freq_out()`
+------------
+
 The `freq_out()` function returns a frequency table as a well-named
 `tbl_df`:
 
@@ -85,4 +104,67 @@ freq_out(x)
 #> 3 c        17
 #> 4 d        17
 #> 5 e        15
+```
+
+`first_upper()`
+---------------
+
+The `first_upper()` function returns the same factor but with the first
+letter of each character value capitalized.
+
+``` r
+months <- factor(c("january","february","march","april","may","june","july",
+         "august","september","october","november","december"))
+first_upper(months)
+#>  [1] January   February  March     April     May       June      July     
+#>  [8] August    September October   November  December 
+#> 12 Levels: April August December February January July June March ... September
+```
+
+`subfactor()`
+-------------
+
+The `subfactor()` This function returns a factor with just the first
+three letters of each element.
+
+``` r
+subfactor(months)
+#>  [1] "jan" "feb" "mar" "apr" "may" "jun" "jul" "aug" "sep" "oct" "nov"
+#> [12] "dec"
+```
+
+`factor_asis()`
+---------------
+
+The `factor_asis()` encodes a vector as a factor with levels in the same
+order as they appear in the data
+
+``` r
+continents <- factor(c("Asia", "Europe", "Africa", "Americas", "Oceania"))
+levels(continents)
+#> [1] "Africa"   "Americas" "Asia"     "Europe"   "Oceania"
+
+continents_asis <- factor_asis(c("Asia", "Europe", "Africa", "Americas", "Oceania"))
+levels(continents_asis)
+#> [1] "Asia"     "Europe"   "Africa"   "Americas" "Oceania"
+```
+
+`reorder_desc()`
+----------------
+
+The `reorder_desc()`reorders the levels of a factor in a descending
+order.
+
+``` r
+alpha_continents <- factor(c("Africa", "Americas", "Asia", "Europe", "Oceania"))
+alpha_continents
+#> [1] Africa   Americas Asia     Europe   Oceania 
+#> Levels: Africa Americas Asia Europe Oceania
+
+reorder_desc(alpha_continents)
+#> [1] Africa   Americas Asia     Europe   Oceania 
+#> attr(,"scores")
+#>   Africa Americas     Asia   Europe  Oceania 
+#>       -1       -2       -3       -4       -5 
+#> Levels: Oceania Europe Asia Americas Africa
 ```

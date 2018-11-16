@@ -28,9 +28,22 @@ Factors are a very useful type of variable in R, but they can also drive you nut
 devtools::install_github("STAT545-UBC-students/hw07-aleurcelay/foofactors")
 ```
 
+##Summary
+This package contains the following functions.
+
+* `fbind()`: Glues two factors together and returns factor.
+* `freq_out()`: Returns a frequency table as a well-named `tbl_df`
+* `first_upper()`: Returns the same factor but with the first letter of each character value capitalized. 
+* `subfactor()`: Returns a factor with just the first three letters of each element. 
+* `factor_asis()`: Encodes a vector as a factor with levels in the same order as they appear in the data
+* `reorder_desc()`: Reorders the levels of a factor in a descending order. 
+
+
 Below is quick demo, for some more examples working with graphs take a look at the [vignettes](http://rpubs.com/aleurcelay/440302) 
   
 ### Quick demo
+
+## `fbind()`
 
 Binding two factors via `fbind()`:
 
@@ -61,8 +74,52 @@ table(x)
 as.data.frame(table(x))
 ```
 
+## `freq_out()`
+
 The `freq_out()` function returns a frequency table as a well-named `tbl_df`:
 
 ```{r}
 freq_out(x)
 ```
+
+## `first_upper()`
+
+The `first_upper()` function returns the same factor but with the first letter of each character value capitalized.
+
+```{r}
+months <- factor(c("january","february","march","april","may","june","july",
+         "august","september","october","november","december"))
+first_upper(months)
+```
+
+## `subfactor()`
+
+The `subfactor()` This function returns a factor with just the first three letters of each element.
+
+```{r}
+subfactor(months)
+```
+
+## `factor_asis()`
+
+The `factor_asis()` encodes a vector as a factor with levels in the same order as they appear in the data
+
+```{r}
+continents <- factor(c("Asia", "Europe", "Africa", "Americas", "Oceania"))
+levels(continents)
+
+continents_asis <- factor_asis(c("Asia", "Europe", "Africa", "Americas", "Oceania"))
+levels(continents_asis)
+```
+
+## `reorder_desc()`
+
+The `reorder_desc()`reorders the levels of a factor in a descending order. 
+
+```{r}
+alpha_continents <- factor(c("Africa", "Americas", "Asia", "Europe", "Oceania"))
+alpha_continents
+
+reorder_desc(alpha_continents)
+```
+
