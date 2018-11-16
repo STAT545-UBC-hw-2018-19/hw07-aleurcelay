@@ -1,0 +1,317 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "foofactors"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> base::assign(".ExTimings", "foofactors-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('foofactors')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("backward")
+> ### * backward
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: backward
+> ### Title: Backwards factors
+> ### Aliases: backward
+> 
+> ### ** Examples
+> 
+> backward(iris$Species)
+  [1] setosa     setosa     setosa     setosa     setosa     setosa    
+  [7] setosa     setosa     setosa     setosa     setosa     setosa    
+ [13] setosa     setosa     setosa     setosa     setosa     setosa    
+ [19] setosa     setosa     setosa     setosa     setosa     setosa    
+ [25] setosa     setosa     setosa     setosa     setosa     setosa    
+ [31] setosa     setosa     setosa     setosa     setosa     setosa    
+ [37] setosa     setosa     setosa     setosa     setosa     setosa    
+ [43] setosa     setosa     setosa     setosa     setosa     setosa    
+ [49] setosa     setosa     versicolor versicolor versicolor versicolor
+ [55] versicolor versicolor versicolor versicolor versicolor versicolor
+ [61] versicolor versicolor versicolor versicolor versicolor versicolor
+ [67] versicolor versicolor versicolor versicolor versicolor versicolor
+ [73] versicolor versicolor versicolor versicolor versicolor versicolor
+ [79] versicolor versicolor versicolor versicolor versicolor versicolor
+ [85] versicolor versicolor versicolor versicolor versicolor versicolor
+ [91] versicolor versicolor versicolor versicolor versicolor versicolor
+ [97] versicolor versicolor versicolor versicolor virginica  virginica 
+[103] virginica  virginica  virginica  virginica  virginica  virginica 
+[109] virginica  virginica  virginica  virginica  virginica  virginica 
+[115] virginica  virginica  virginica  virginica  virginica  virginica 
+[121] virginica  virginica  virginica  virginica  virginica  virginica 
+[127] virginica  virginica  virginica  virginica  virginica  virginica 
+[133] virginica  virginica  virginica  virginica  virginica  virginica 
+[139] virginica  virginica  virginica  virginica  virginica  virginica 
+[145] virginica  virginica  virginica  virginica  virginica  virginica 
+attr(,"scores")
+    setosa versicolor  virginica 
+     125.5       75.5       25.5 
+Levels: virginica versicolor setosa
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("backward", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("factor_asis")
+> ### * factor_asis
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: factor_asis
+> ### Title: factor_asis
+> ### Aliases: factor_asis
+> 
+> ### ** Examples
+> 
+> factor_asis(iris$Species)
+  [1] setosa     setosa     setosa     setosa     setosa     setosa    
+  [7] setosa     setosa     setosa     setosa     setosa     setosa    
+ [13] setosa     setosa     setosa     setosa     setosa     setosa    
+ [19] setosa     setosa     setosa     setosa     setosa     setosa    
+ [25] setosa     setosa     setosa     setosa     setosa     setosa    
+ [31] setosa     setosa     setosa     setosa     setosa     setosa    
+ [37] setosa     setosa     setosa     setosa     setosa     setosa    
+ [43] setosa     setosa     setosa     setosa     setosa     setosa    
+ [49] setosa     setosa     versicolor versicolor versicolor versicolor
+ [55] versicolor versicolor versicolor versicolor versicolor versicolor
+ [61] versicolor versicolor versicolor versicolor versicolor versicolor
+ [67] versicolor versicolor versicolor versicolor versicolor versicolor
+ [73] versicolor versicolor versicolor versicolor versicolor versicolor
+ [79] versicolor versicolor versicolor versicolor versicolor versicolor
+ [85] versicolor versicolor versicolor versicolor versicolor versicolor
+ [91] versicolor versicolor versicolor versicolor versicolor versicolor
+ [97] versicolor versicolor versicolor versicolor virginica  virginica 
+[103] virginica  virginica  virginica  virginica  virginica  virginica 
+[109] virginica  virginica  virginica  virginica  virginica  virginica 
+[115] virginica  virginica  virginica  virginica  virginica  virginica 
+[121] virginica  virginica  virginica  virginica  virginica  virginica 
+[127] virginica  virginica  virginica  virginica  virginica  virginica 
+[133] virginica  virginica  virginica  virginica  virginica  virginica 
+[139] virginica  virginica  virginica  virginica  virginica  virginica 
+[145] virginica  virginica  virginica  virginica  virginica  virginica 
+Levels: setosa versicolor virginica
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("factor_asis", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("fbind")
+> ### * fbind
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: fbind
+> ### Title: Bind two factors
+> ### Aliases: fbind
+> 
+> ### ** Examples
+> 
+> fbind(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
+[1] setosa     versicolor virginica  ctrl       trt1       trt2      
+Levels: ctrl setosa trt1 trt2 versicolor virginica
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("fbind", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("first_upper")
+> ### * first_upper
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: first_upper
+> ### Title: First letter uppercase
+> ### Aliases: first_upper
+> 
+> ### ** Examples
+> 
+> first_upper(iris$Species)
+  [1] Setosa     Setosa     Setosa     Setosa     Setosa     Setosa    
+  [7] Setosa     Setosa     Setosa     Setosa     Setosa     Setosa    
+ [13] Setosa     Setosa     Setosa     Setosa     Setosa     Setosa    
+ [19] Setosa     Setosa     Setosa     Setosa     Setosa     Setosa    
+ [25] Setosa     Setosa     Setosa     Setosa     Setosa     Setosa    
+ [31] Setosa     Setosa     Setosa     Setosa     Setosa     Setosa    
+ [37] Setosa     Setosa     Setosa     Setosa     Setosa     Setosa    
+ [43] Setosa     Setosa     Setosa     Setosa     Setosa     Setosa    
+ [49] Setosa     Setosa     Versicolor Versicolor Versicolor Versicolor
+ [55] Versicolor Versicolor Versicolor Versicolor Versicolor Versicolor
+ [61] Versicolor Versicolor Versicolor Versicolor Versicolor Versicolor
+ [67] Versicolor Versicolor Versicolor Versicolor Versicolor Versicolor
+ [73] Versicolor Versicolor Versicolor Versicolor Versicolor Versicolor
+ [79] Versicolor Versicolor Versicolor Versicolor Versicolor Versicolor
+ [85] Versicolor Versicolor Versicolor Versicolor Versicolor Versicolor
+ [91] Versicolor Versicolor Versicolor Versicolor Versicolor Versicolor
+ [97] Versicolor Versicolor Versicolor Versicolor Virginica  Virginica 
+[103] Virginica  Virginica  Virginica  Virginica  Virginica  Virginica 
+[109] Virginica  Virginica  Virginica  Virginica  Virginica  Virginica 
+[115] Virginica  Virginica  Virginica  Virginica  Virginica  Virginica 
+[121] Virginica  Virginica  Virginica  Virginica  Virginica  Virginica 
+[127] Virginica  Virginica  Virginica  Virginica  Virginica  Virginica 
+[133] Virginica  Virginica  Virginica  Virginica  Virginica  Virginica 
+[139] Virginica  Virginica  Virginica  Virginica  Virginica  Virginica 
+[145] Virginica  Virginica  Virginica  Virginica  Virginica  Virginica 
+Levels: Setosa Versicolor Virginica
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("first_upper", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("freq_out")
+> ### * freq_out
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: freq_out
+> ### Title: Make a frequency table for a factor
+> ### Aliases: freq_out
+> 
+> ### ** Examples
+> 
+> freq_out(iris$Species)
+[90m# A tibble: 3 x 2[39m
+  x              n
+  [3m[90m<fct>[39m[23m      [3m[90m<int>[39m[23m
+[90m1[39m setosa        50
+[90m2[39m versicolor    50
+[90m3[39m virginica     50
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("freq_out", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("reorder_desc")
+> ### * reorder_desc
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: reorder_desc
+> ### Title: Reorder vector in descending order
+> ### Aliases: reorder_desc
+> 
+> ### ** Examples
+> 
+> reorder_desc(iris$Species)
+  [1] setosa     setosa     setosa     setosa     setosa     setosa    
+  [7] setosa     setosa     setosa     setosa     setosa     setosa    
+ [13] setosa     setosa     setosa     setosa     setosa     setosa    
+ [19] setosa     setosa     setosa     setosa     setosa     setosa    
+ [25] setosa     setosa     setosa     setosa     setosa     setosa    
+ [31] setosa     setosa     setosa     setosa     setosa     setosa    
+ [37] setosa     setosa     setosa     setosa     setosa     setosa    
+ [43] setosa     setosa     setosa     setosa     setosa     setosa    
+ [49] setosa     setosa     versicolor versicolor versicolor versicolor
+ [55] versicolor versicolor versicolor versicolor versicolor versicolor
+ [61] versicolor versicolor versicolor versicolor versicolor versicolor
+ [67] versicolor versicolor versicolor versicolor versicolor versicolor
+ [73] versicolor versicolor versicolor versicolor versicolor versicolor
+ [79] versicolor versicolor versicolor versicolor versicolor versicolor
+ [85] versicolor versicolor versicolor versicolor versicolor versicolor
+ [91] versicolor versicolor versicolor versicolor versicolor versicolor
+ [97] versicolor versicolor versicolor versicolor virginica  virginica 
+[103] virginica  virginica  virginica  virginica  virginica  virginica 
+[109] virginica  virginica  virginica  virginica  virginica  virginica 
+[115] virginica  virginica  virginica  virginica  virginica  virginica 
+[121] virginica  virginica  virginica  virginica  virginica  virginica 
+[127] virginica  virginica  virginica  virginica  virginica  virginica 
+[133] virginica  virginica  virginica  virginica  virginica  virginica 
+[139] virginica  virginica  virginica  virginica  virginica  virginica 
+[145] virginica  virginica  virginica  virginica  virginica  virginica 
+attr(,"scores")
+    setosa versicolor  virginica 
+        -1         -2         -3 
+Levels: virginica versicolor setosa
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("reorder_desc", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("subfactor")
+> ### * subfactor
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: subfactor
+> ### Title: First three characters of factor
+> ### Aliases: subfactor
+> 
+> ### ** Examples
+> 
+> subfactor(iris$Species)
+  [1] "set" "set" "set" "set" "set" "set" "set" "set" "set" "set" "set" "set"
+ [13] "set" "set" "set" "set" "set" "set" "set" "set" "set" "set" "set" "set"
+ [25] "set" "set" "set" "set" "set" "set" "set" "set" "set" "set" "set" "set"
+ [37] "set" "set" "set" "set" "set" "set" "set" "set" "set" "set" "set" "set"
+ [49] "set" "set" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver"
+ [61] "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver"
+ [73] "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver"
+ [85] "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver" "ver"
+ [97] "ver" "ver" "ver" "ver" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir"
+[109] "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir"
+[121] "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir"
+[133] "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir" "vir"
+[145] "vir" "vir" "vir" "vir" "vir" "vir"
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("subfactor", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.463 0.028 0.498 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

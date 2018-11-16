@@ -1,0 +1,8 @@
+backward                Backwards factors
+factor_asis             factor_asis
+fbind                   Bind two factors
+first_upper             First letter uppercase
+foofactors              foofactors: Make factors less annoying
+freq_out                Make a frequency table for a factor
+reorder_desc            Reorder vector in descending order
+subfactor               First three characters of factor

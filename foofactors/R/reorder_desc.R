@@ -1,6 +1,6 @@
 #' Reorder vector in descending order
 #' 
-#' Encodes a vector as a factor with levels in the same order as they appear.
+#' Reorders levels of a factor in descending order.
 #' 
 #' @param x factor
 #' 

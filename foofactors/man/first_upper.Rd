@@ -13,7 +13,7 @@ first_upper(x)
 factor
 }
 \description{
-Returns the same factor but with the first letter changred to uppercase
+Returns the same factor but with the first letter of each character value capitalized.
 }
 \examples{
 first_upper(iris$Species)

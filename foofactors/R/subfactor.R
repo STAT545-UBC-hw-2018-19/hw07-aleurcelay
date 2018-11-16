@@ -13,7 +13,7 @@
 #' @examples
 #' subfactor(iris$Species)
 subfactor <- function(x) {
-  substr(x, start = 1, stop = 3)
+  factor(substr(x, start = 1, stop = 3))
   
 }
 

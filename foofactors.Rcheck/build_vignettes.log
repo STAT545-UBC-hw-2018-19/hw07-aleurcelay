@@ -1,0 +1,5 @@
+Quitting from lines 73-87 (hello-foofactors.Rmd) 
+Error: processing vignette 'hello-foofactors.Rmd' failed with diagnostics:
+package or namespace load failed for 'tidyverse' in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+ there is no package called 'nlme'
+Execution halted
