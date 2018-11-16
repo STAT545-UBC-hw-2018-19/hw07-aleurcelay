@@ -1,5 +1,5 @@
 #' Reorder vector in descending order
-#'
+#' 
 #' @param x factor
 #' 
 #'
