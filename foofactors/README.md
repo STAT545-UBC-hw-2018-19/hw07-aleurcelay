@@ -129,8 +129,8 @@ three letters of each element.
 
 ``` r
 subfactor(months)
-#>  [1] "jan" "feb" "mar" "apr" "may" "jun" "jul" "aug" "sep" "oct" "nov"
-#> [12] "dec"
+#>  [1] jan feb mar apr may jun jul aug sep oct nov dec
+#> Levels: apr aug dec feb jan jul jun mar may nov oct sep
 ```
 
 `factor_asis()`
