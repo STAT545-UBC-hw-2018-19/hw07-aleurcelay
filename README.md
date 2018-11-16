@@ -11,7 +11,7 @@ The original package can be found [here](https://github.com/jennybc/foofactors)
 
 For the README file of my modified version of foofactors please click in the following link
 
-:star2: [foofactors](/foofactors/README.md)
+:star2: [Modified foofactors by Alejandra](/foofactors/README.md)
 
 ## Summary
 
