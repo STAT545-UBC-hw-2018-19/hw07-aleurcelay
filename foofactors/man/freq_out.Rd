@@ -13,7 +13,8 @@ freq_out(x)
 tbl_df
 }
 \description{
-Make a frequency table for a factor
+Create a tbl_df with two columns. The first column contains the input factor levels,
+and the second factor contains the number of time each level is repeated in the dataset
 }
 \examples{
 freq_out(iris$Species)

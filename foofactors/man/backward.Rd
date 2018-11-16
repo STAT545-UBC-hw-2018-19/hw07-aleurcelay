@@ -2,7 +2,7 @@
 % Please edit documentation in R/backward.R
 \name{backward}
 \alias{backward}
-\title{change de the order of the factors backwards}
+\title{Backwards factors}
 \usage{
 backward(x)
 }
@@ -13,7 +13,7 @@ backward(x)
 factor
 }
 \description{
-change de the order of the factors backwards
+Create a new factor with the inverse order of the original factor
 }
 \examples{
 backward(iris$Species)

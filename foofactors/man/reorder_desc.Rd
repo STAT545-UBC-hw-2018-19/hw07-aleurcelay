@@ -13,7 +13,7 @@ reorder_desc(x)
 factor
 }
 \description{
-Reorder vector in descending order
+Create a new factor with with a descending order of the levels of the original factor
 }
 \examples{
 reorder_desc(iris$Species)

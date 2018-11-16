@@ -2,7 +2,7 @@
 % Please edit documentation in R/lowercase.R
 \name{lowercase}
 \alias{lowercase}
-\title{change de the factor to lowercase letters}
+\title{Lowercase factor}
 \usage{
 lowercase(x)
 }
@@ -13,7 +13,7 @@ lowercase(x)
 factor
 }
 \description{
-change de the factor to lowercase letters
+Returns the same factor but with all lowercase letters
 }
 \examples{
 lowercase(iris$Species)

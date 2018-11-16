@@ -40,6 +40,21 @@ ggplot(df_reorder, aes(reorder(x, -y) ,y))+
   geom_point(col='blue')
 
 
+```
+
+```{r}
+sizes <- c("small", "large", "large", "small", "medium")
+
+first_up <- function(x){
+  substr(x, 1, 1) <- toupper(substr(x, 1, 1))
+  return (x)
+}
+
+first_up(sizes)
+class(sizes)
 
 ```
+
+
+
 

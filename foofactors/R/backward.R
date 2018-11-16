@@ -1,13 +1,18 @@
-#' change de the order of the factors backwards
-#'
+#' Backwards factors 
+#' 
+#' Create a new factor with the inverse order of the original factor
+#' 
+#' 
 #' @param x factor
 #' 
-#'
 #' @return factor
 #' @export
+#' 
 #' @examples
 #' backward(iris$Species)
 backward <- function(x) {
-  x[length(x):1]
+  back_order <- seq(length(x), 1)
+  reorder(x, back_order)
   
 }
+
