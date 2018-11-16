@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/440302/7cd8f26c3d67445ba818fe93a58dae7e
+bundleId: https://api.rpubs.com/api/v1/document/440302/7cd8f26c3d67445ba818fe93a58dae7e
+url: http://rpubs.com/aleurcelay/440302
+when: 1542349650.78637
