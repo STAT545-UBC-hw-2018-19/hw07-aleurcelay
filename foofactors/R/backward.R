@@ -8,6 +8,6 @@
 #' @examples
 #' backward(iris$Species)
 backward <- function(x) {
-  x[lenght(x):1]
+  x[length(x):1]
   
 }
