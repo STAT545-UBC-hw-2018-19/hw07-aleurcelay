@@ -2,9 +2,13 @@
 hw07-aleurcelay
 ===============
 
-**NOTE: This is a toy package created for expository purposes. It is not
-meant to actually be useful. If you want a package for factor handling,
-please see [forcats](https://cran.r-project.org/package=forcats).**
+**NOTE: This an updated version of the foofactors package created by
+Jenny Brian.The original package can be found in the following link:
+[original foofactors](https://github.com/jennybc/foofactors). This
+package was created for education purposes. It is meant to learn how to
+create, modify, or update a package. If you want a package for factor
+handling, please see
+[forcats](https://cran.r-project.org/package=forcats).**
 
 ### foofactors
 
@@ -15,8 +19,11 @@ feeding of factors.
 ### Installation
 
 ``` r
-devtools::install_github("jennybc/foofactors")
+devtools::install_github("STAT545-UBC-students/hw07-aleurcelay/foofactors")
 ```
+
+Below is quick demo, for some more examples working with graphs take a
+look at the [vignettes](/vignettes/hello-foofactors.html)
 
 ### Quick demo
 
